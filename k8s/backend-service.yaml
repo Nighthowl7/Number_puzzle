@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend        # <--- This forces it to update the "backend" service
+spec:
+  selector:
+    app: puzzle-backend
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  type: LoadBalancer   # <--- This exposes it to localhost
